@@ -1,0 +1,11 @@
+POST /auth/sessions
+Create a new session (login).
+
+DELETE /auth/sessions/{sessionId}
+Terminate a specific session.
+
+GET /auth/users/{userId}/roles
+Retrieve roles assigned to a user.
+
+PUT /auth/users/{userId}/password/reset
+Reset a user’s password.

@@ -1,3 +1,5 @@
+#Preliminary version 0.1
+
 POST /auth/sessions
 Create a new session (login).
 

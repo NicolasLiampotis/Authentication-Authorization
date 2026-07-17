@@ -228,15 +228,17 @@ The following baseline claims are recommended.
 
 | Type of information | Technical claim | Purpose |
 | --- | --- | --- |
-| Persistent user identifier | sub and voperson_id | Stable user identification across services |
-| Name | name, given_name, family_name | Display name and user-facing workflows |
-| Email address | email | Contact and notification |
-| Organisational affiliation | voperson_external_affiliation | User affiliation in their home organisation |
-| Home organisation | schac_home_organization | User’s home organisation |
-| Assurance | eduperson_assurance | Identity assurance information |
-| Groups and roles | entitlements | Community membership, roles and access rights |
+| Persistent user identifier | `voperson_id` | Stable user identification across services |
+| Name | `name`, `given_name`, `family_name` | Display name and user-facing workflows |
+| Email address | `email` | Contact and notification |
+| Organisational affiliation | `voperson_external_affiliation` | User affiliation in their home organisation |
+| Home organisation | `schac_home_organization` | User’s home organisation using the domain name of the organisation |
+| Assurance | `eduperson_assurance` | Identity assurance information |
+| Groups and roles | `entitlements` | Community membership, roles and access rights |
 
-Services should request only the claims they need. For example, a service that only needs login and contact may not need group information. A service that applies group/role-based access control will need entitlements.
+Services should request only the claims they need. For example, a service that only needs login and contact may not need group information. A service that applies group/role-based access control will need `entitlements`.
+
+`voperson_id` is the recommended claim for stable user identification. For some AAI implementations, e.g. EGI Check-in, `sub` carries the same value as `voperson_id`, in which case it may also be used for this purpose. **Email addresses must not be used as persistent user identifiers.**
 
 The entitlements claim should be used for group and role information according to AARC-G069. This enables consistent interpretation of community roles across ECHOES and sister-project services.
 
